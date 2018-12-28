@@ -1,0 +1,59 @@
+:root {
+    --gridCols: 1;
+    --gridRows: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(var(--gridRows), min-content) max-content;
+    flex: 1;
+    font-size: 1em;
+
+    [role=gridcell] {
+        padding: .25rem;
+
+        &.odd {
+            background-color: #EDEDED;
+        }
+    }
+
+    @media (min-width: 769px) {
+        grid-template-columns: repeat(var(--gridCols), minmax(min-content, auto));
+        overflow-y: auto;
+
+        & + .grid {
+            margin-left: 1rem;
+        }
+    
+        > [role=columnheader] {
+            background-color: #ffffff;
+            border-bottom: 1px solid #403E3D;
+            font-weight: 700;
+            padding: .25rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .label {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1;
+        overflow-y: visible;
+
+        & + .grid {
+            margin-top: 2rem;
+        }
+
+        > [role=columnheader] {
+            display: none;
+        }
+
+        .label {
+            display: block;
+            font-weight: 700;
+        }
+    }
+}

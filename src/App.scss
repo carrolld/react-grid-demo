@@ -1,0 +1,16 @@
+.App {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100vw;
+
+    @media (min-width: 769px) {
+        flex-direction: row;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        overflow: auto;
+    }
+}
