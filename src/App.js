@@ -13,7 +13,7 @@ class App extends Component {
             { name: "column3", label: "Column 3" },
             { name: "column4", label: "Column 4" },
           ]}
-          data={Array.from({length: 50}).map((row, i) => [i + "-1", i + "-2", i + "-3", i + "-4"])}
+          data={Array.from({length: 10000}).map((row, i) => [i + "-1", i + "-2", i + "-3", i + "-4"])}
         />
         <Grid
           columns={[

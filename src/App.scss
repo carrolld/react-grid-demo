@@ -13,4 +13,12 @@
         flex-direction: column;
         overflow: auto;
     }
+
+    .hidden {
+        display: none;
+    }
+
+    .spinner {
+        text-align: center;
+    }
 }
