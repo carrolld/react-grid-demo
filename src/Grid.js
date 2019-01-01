@@ -10,12 +10,14 @@ class Grid extends Component {
     constructor(props) {
         super(props);
 
+        let records = props.records ? props.records : [];
+
         this.state = {
             columns: [],
-            data: props.data ? props.data : [],
+            records: records,
             loading: false,
 
-            total: props.data.length,
+            total: records.length,
             recordHeight: 25,
             recordsPerBody: 100,
             visibleStart: 0,
@@ -108,7 +110,7 @@ class Grid extends Component {
     }
 
     sortDataByColumn(index, order) {
-        this.state.data.sort(function(a, b) {
+        this.state.records.sort(function(a, b) {
             if (a[index] === b[index]) {
                 return 0;
             } else if (order === "desc") {
@@ -126,17 +128,18 @@ class Grid extends Component {
         role="grid"
         style={{
             "--gridCols": this.state.columns.length,
-            "--gridRows": this.state.data.length
+            "--gridRows": this.state.records.length
         }}
         >
             <div className="content" style={{
                 height: this.state.total * this.state.recordHeight,
                 paddingTop: this.state.displayStart * this.state.recordHeight,
+                paddingBottom: this.state.recordHeight * 1.5,
             }}>
                 {this.state.columns.map((column, i) => (
                     <GridColumn key={`column-${i}`} {...column} />
                 ))}
-                {this.state.data.slice(this.state.displayStart, this.state.displayEnd).reduce((res, row, line) => [
+                {this.state.records.slice(this.state.displayStart, this.state.displayEnd).reduce((res, row, line) => [
                     ...res,
                     ...(row.map((cell, i) =>
                         <GridCell

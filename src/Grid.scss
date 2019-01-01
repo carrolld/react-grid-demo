@@ -59,7 +59,7 @@
     }
     
     @media (max-width: 768px) {
-        overflow-y: visible;
+        overflow-y: auto;
 
         & + .grid {
             margin-top: 2rem;
