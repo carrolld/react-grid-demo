@@ -50,34 +50,16 @@ class Grid extends Component {
     }
 
     sortDataByColumn(index, order) {
-        var data = this.state.data;
-        if (order === 'desc') {
-            data.sort(this.sortDesc(index));
-        } else {
-            data.sort(this.sortAsc(index));
-        }
-        this.setState({ data: data });
-    }
-
-    sortAsc(key) {
-        return function(a, b) {
-            if (a[key] === b[key]) {
+        this.state.data.sort(function(a, b) {
+            if (a[index] === b[index]) {
                 return 0;
+            } else if (order === "desc") {
+                return a[index] < b[index] ? 1 : -1;
             } else {
-                return (a[key] < b[key]) ? -1 : 1;
+                return a[index] > b[index] ? 1 : -1;
             }
-        }
-    }
-
-    sortDesc(key) {
-        return function (a, b) {
-            if (a[key] === b[key]) {
-                return 0;
-            } else {
-                return (a[key] > b[key]) ? -1 : 1;
-            }
-        }
-    }
+        });
+    };
 
     render() {
       return <div
