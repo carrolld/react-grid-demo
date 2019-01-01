@@ -5,8 +5,18 @@
     font-size: 1em;
 
     [role=columnheader] {
+        display: flex;
+        flex-direction: row;
+
         &.sortable {
             cursor: pointer;
+        }
+
+        div {
+            flex: 1;
+            &:last-child {
+                flex: 0 1 auto;
+            }
         }
     }
 

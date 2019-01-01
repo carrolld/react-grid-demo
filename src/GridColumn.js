@@ -14,11 +14,12 @@ class GridColumn extends Component {
             data-name={this.props.name}
             data-sort={this.props.sort}
         >
-            {this.props.label}
-            
-            {this.props.sort === false ? <FontAwesomeIcon icon={faSort} /> : ''}
-            {this.props.sort === 'asc' ? <FontAwesomeIcon icon={faSortUp} /> : ''}
-            {this.props.sort === 'desc' ? <FontAwesomeIcon icon={faSortDown} /> : ''}
+            <div>{this.props.label}</div>            
+            <div>
+                {this.props.sort === false ? <FontAwesomeIcon icon={faSort} /> : ''}
+                {this.props.sort === 'asc' ? <FontAwesomeIcon icon={faSortUp} /> : ''}
+                {this.props.sort === 'desc' ? <FontAwesomeIcon icon={faSortDown} /> : ''}
+            </div>
         </div>;
     }
 }
