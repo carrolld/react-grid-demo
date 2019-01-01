@@ -5,21 +5,6 @@ import { faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 
 class GridColumn extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         click: props.click,
-    //         index: props.index,
-    //         name: props.name,
-    //         label: props.label,
-    //         sort: false,
-    //     };
-    // }
-
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState(nextProps);
-    // }
-    
     render() {
         return <div
             role="columnheader"

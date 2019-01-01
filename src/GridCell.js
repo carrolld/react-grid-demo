@@ -1,19 +1,6 @@
 import React, {Component} from 'react';
 
 class GridColumn extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         index: props.index,
-    //         label: props.label,
-    //         row: props.row,
-    //     };
-    // }
-
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState(nextProps);
-    // }
-    
     render() {
         return <div
             role="gridcell"
