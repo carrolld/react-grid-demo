@@ -3,23 +3,35 @@ import './App.scss';
 import Grid from './Grid';
 
 class App extends Component {
-  model_a = { "data": Array.from({length: 50}).map((row, i) => [i + "-1", i + "-2", i + "-3", i + "-4"])};
-  model_b = { "data": [
-    ["Bacon", "ipsum", "dolor"],
-    ["Bacon ipsum dolor amet tri-tip hamburger ham hock, ham capicola biltong brisket frankfurter. Buffalo shankle andouille tail ball tip, picanha fatback shoulder boudin strip steak filet mignon tenderloin ham hock rump. Ham frankfurter corned beef boudin shankle pork tail jerky strip steak kevin spare ribs ham hock shank rump pork loin. Turkey pig pancetta, venison bacon flank hamburger short ribs biltong spare ribs prosciutto porchetta strip steak pork belly.", "lorem", "ipsum"],
-    ["Bacon", "ipsum", "dolor"],
-  ]};
-
   render() {
     return (
       <div className="App">
-        <Grid 
-          columns={["Column 1", "Column 2", "Column 3", "Column 4"]} 
-          rows={this.model_a.data}
+        <Grid
+          columns={[
+            { name: "column1", label: "Column 1" },
+            { name: "column2", label: "Column 2" },
+            { name: "column3", label: "Column 3" },
+            { name: "column4", label: "Column 4" },
+          ]}
+          data={Array.from({length: 50}).map((row, i) => [i + "-1", i + "-2", i + "-3", i + "-4"])}
         />
-        <Grid 
-          columns={["Column 1", "Column 2", "Column 3"]} 
-          rows={this.model_b.data}
+        <Grid
+          columns={[
+            { name: "column1", label: "Distance" },
+            { name: "column2", label: "Name" },
+            { name: "column3", label: "Moons" },
+          ]}
+          data={[
+            ["1", "Mercury", "0"],
+            ["2", "Venus", "0"],
+            ["3", "Earth", "1"],
+            ["4", "Mars", "2"],
+            ["5", "Jupiter", "4"],
+            ["6", "Saturn", "8"],
+            ["7", "Uranus", "5"],
+            ["8", "Neptune", "1"],
+            ["9", "Pluto", "1"],
+          ]}
         />
       </div>
     );

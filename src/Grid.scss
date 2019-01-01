@@ -4,6 +4,12 @@
     flex: 1;
     font-size: 1em;
 
+    [role=columnheader] {
+        &.sortable {
+            cursor: pointer;
+        }
+    }
+
     [role=gridcell] {
         padding: .25rem;
 
