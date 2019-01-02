@@ -23,14 +23,6 @@
                 }
             }
         }
-
-        [role=gridcell] {
-            padding: .25rem;
-
-            &.odd {
-                background-color: #EDEDED;
-            }
-        }
     }
 
     @media (min-width: 769px) {
@@ -45,13 +37,21 @@
 
             > [role=columnheader] {
                 background-color: #ffffff;
-                border-bottom: 1px solid #403E3D;
+                border-bottom: 1px solid #cccccc;
                 font-weight: 700;
-                padding: .25rem;
+                padding: .5rem;
                 position: sticky;
                 top: 0;
             }
 
+            [role=gridcell] {
+                border-bottom: 1px solid #ededed;
+                padding: .5rem;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+    
             .label {
                 display: none;
             }
@@ -72,6 +72,13 @@
                 display: none;
             }
 
+            > [role=gridcell] {
+                padding: .25rem;
+                &.odd {
+                    background-color: #ededed;
+                }
+            }
+    
             .label {
                 display: block;
                 font-weight: 700;
