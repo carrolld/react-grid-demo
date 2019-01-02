@@ -37,16 +37,20 @@
 
             > [role=columnheader] {
                 background-color: #ffffff;
-                border-bottom: 1px solid #cccccc;
+                border-bottom: 1px solid #505050;
                 font-weight: 700;
-                padding: .5rem;
+                padding: .25rem;
                 position: sticky;
                 top: 0;
+
+                svg {
+                    color: #505050;
+                }
             }
 
             [role=gridcell] {
-                border-bottom: 1px solid #ededed;
-                padding: .5rem;
+                border-bottom: 1px solid #e3e3e3;
+                padding: .25rem;
                 &:last-child {
                     border-bottom: none;
                 }
@@ -75,7 +79,7 @@
             > [role=gridcell] {
                 padding: .25rem;
                 &.odd {
-                    background-color: #ededed;
+                    background-color: #f1f1f1;
                 }
             }
     
